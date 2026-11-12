@@ -1,0 +1,60 @@
+# LaTeX auxiliary files
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.idx
+*.ilg
+*.ind
+*.nav
+*.snm
+*.vrb
+*.bcf
+*.run.xml
+*.xdv
+
+# LaTeX build outputs (keep source, ignore compiled)
+*.pdf
+
+# Doxygen generated documentation
+generated_docs/
+html/
+latex/
+
+# C++ compiled files
+*.o
+*.obj
+*.exe
+*.out
+demo
+a.out
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS files
+Thumbs.db
+desktop.ini
+
+# Git demo files (preserve structure but ignore temp files)
+01_Assignments/Assignment_9_Git_Branching/demo_repository/.git/
+
+# Keep PDFs in 00_Source_Material
+!00_Source_Material/PDFs/*.pdf

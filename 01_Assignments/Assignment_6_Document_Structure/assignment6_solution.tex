@@ -1,0 +1,120 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{makeidx}
+\usepackage{natbib}
+\usepackage{url}
+
+\geometry{margin=1in}
+\definecolor{pagecream}{HTML}{FFF8EA}
+\pagecolor{pagecream}
+
+\setmainfont{DejaVu Serif}
+\setsansfont{DejaVu Sans}
+% Use Courier New when installed; otherwise use a clear monospace fallback.
+\IfFontExistsTF{Courier New}
+  {\setmonofont{Courier New}}
+  {\setmonofont{DejaVu Sans Mono}}
+
+% Alphabetic section numbering
+\renewcommand{\thesection}{\Alph{section}}
+
+\makeindex
+
+\begin{document}
+
+\section{Fonts and Background}
+\index{background}
+
+\begin{trivlist}
+\item This text is written in DejaVu Serif, the main font.
+\item {\sffamily This text is written in DejaVu Sans, the sans-serif font.}
+\item {\ttfamily This text is written in Courier, the monospace font.}
+\end{trivlist}
+
+\section{Spacing}
+\index{spacing}
+
+This is the first line of a paragraph.\\
+This is another line, but not another paragraph.
+
+\vspace{1cm}
+
+This paragraph starts 1cm below.
+
+\medskip
+\noindent
+\begin{minipage}{0.47\textwidth}
+This is the first hyphenation example. Incomprehensibilities and
+antidisestablishmentarianisms are two long words.
+\end{minipage}\hfill
+\begin{minipage}{0.47\textwidth}
+This is the second hyphenation example. Use an unbreakable word
+with \verb|\mbox| only when demonstrating that the word cannot
+be split: \mbox{antidisestablishmentarianisms}.
+\end{minipage}
+
+% Optional language-specific hyphenation patterns:
+\hyphenation{in-com-pre-hen-si-bil-i-ties
+             an-ti-dis-es-tab-lish-men-tar-i-an-isms}
+
+\clearpage
+
+% Assignment has no section C content; skip to D by setting counter to 3.
+\setcounter{section}{3}
+
+\section{Numbering}
+\index{numbering}
+
+% The following two equations are deliberately ordered ellipse then circle.
+\begin{equation}
+\frac{x^2}{a^2}+\frac{y^2}{b^2}=1
+\label{eq:ellipse}
+\end{equation}
+\begin{equation}
+x^2+y^2=1
+\label{eq:circle}
+\end{equation}
+
+Equation~\eqref{eq:circle} denotes a circle, while
+Equation~\eqref{eq:ellipse} denotes an ellipse.
+
+\section{Boxes and Lines}
+\index{savebox}
+\newsavebox{\savedmessage}
+\savebox{\savedmessage}{\fbox{This message is written in a savebox.}}
+
+\usebox{\savedmessage}
+
+\bigskip
+\usebox{\savedmessage}
+
+\bigskip
+\usebox{\savedmessage}
+
+\bigskip
+This message is wrapped in
+
+\fbox{\parbox{5cm}{This message is wrapped in a 5cm paragraph box.
+The box constrains the paragraph width and allows the text to wrap.}}
+
+\medskip
+Note that these boxes are used for highlighting and layout design.
+
+% Add index entries for relevant terms throughout the document.
+\index{savebox}
+\index{paragraph box}
+
+\section*{References}
+The short introduction to LaTeX is cited in the text
+\citep{oetiker2021}. The Overleaf BibTeX reference is also cited
+\citep{overleafBibTeX}.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\printindex
+
+\end{document}

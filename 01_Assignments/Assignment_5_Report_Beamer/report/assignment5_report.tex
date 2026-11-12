@@ -1,0 +1,97 @@
+\documentclass[12pt,a4paper]{report}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor}
+\usepackage{sectsty}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+
+\definecolor{titlemagenta}{RGB}{200,0,200}
+\definecolor{titleorange}{RGB}{230,120,0}
+
+% Editable student/course details.
+\newcommand{\StudentName}{Shlok Patel}
+\newcommand{\StudentID}{[Your ID]}
+\newcommand{\CourseTitle}{Technical Writing}
+\newcommand{\InstructorName}{[Course Instructor]}
+
+% Chapter/section/subsection heading styles.
+\chapterfont{\color{red}\bfseries\Huge}
+\sectionfont{\color{titlemagenta}\itshape\Large}
+\subsectionfont{\color{titleorange}\bfseries}
+
+% Header from page 2 onwards, including chapter-opening pages.
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\StudentName}
+\fancyhead[C]{\CourseTitle}
+\fancyhead[R]{\today}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \fancyhead[L]{\StudentName}
+  \fancyhead[C]{\CourseTitle}
+  \fancyhead[R]{\today}
+  \renewcommand{\headrulewidth}{0.4pt}
+}
+
+\begin{document}
+
+% First page: title page without any header/footer.
+\begin{titlepage}
+  \thispagestyle{empty}
+  \centering
+  \vspace*{2cm}
+  {\Huge\bfseries Introduction to \LaTeX\par}
+  \vspace{2cm}
+  {\Large \StudentName\par}
+  \vspace{0.5cm}
+  {\large ID: \StudentID\par}
+  \vspace{0.5cm}
+  {\large \CourseTitle\par}
+  \vspace{0.5cm}
+  {\large Instructor: \InstructorName\par}
+  \vfill
+  {\large \today\par}
+\end{titlepage}
+
+% All pages after the title page use the requested header.
+\begin{abstract}
+This document introduces LaTeX as a document preparation system.
+It demonstrates document structure, mathematical typesetting,
+tables, figures, citations, and presentation-related workflows.
+\end{abstract}
+
+\tableofcontents
+
+\chapter{Introduction}
+LaTeX separates document content from formatting instructions.
+It is especially useful for technical reports and mathematical documents.
+
+\section{Purpose}
+This section introduces the purpose and structure of the report.
+
+\subsection{Main Features}
+LaTeX supports automatic numbering, cross-references and equations.
+
+\chapter{Document Structure}
+\section{Sections and Subsections}
+The report class supports chapters, sections and subsections.
+
+\subsection{Example}
+A subsection appears below its parent section.
+
+\chapter{Mathematics and Figures}
+\section{A Sample Equation}
+\[
+E=mc^2
+\]
+
+\section{A Sample Figure}
+Figures can be inserted using the graphicx package.
+
+\chapter{Conclusion}
+This report demonstrates the basic structure of a LaTeX report.
+
+\end{document}

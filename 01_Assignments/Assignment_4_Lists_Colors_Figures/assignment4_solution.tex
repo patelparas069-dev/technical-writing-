@@ -1,0 +1,127 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{array}
+\usepackage{float}
+
+\definecolor{mypurple}{RGB}{200,20,200}
+% Same color expressed in HTML hexadecimal:
+\definecolor{mypurpleHTML}{HTML}{C814C8}
+% xcolor mixture: 60 percent red and 40 percent yellow.
+\colorlet{myblend}{red!60!yellow}
+
+\begin{document}
+
+\section{Lists}
+Following are some technologies that can be used to format content:
+\begin{itemize}
+  \item \LaTeX
+  \item HTML (+CSS)
+  \item Markdown
+\end{itemize}
+
+You would most likely use \LaTeX\ in these scenarios:
+\begin{enumerate}
+  \item To write research papers.
+  \item To embed mathematical equations within other software,
+        such as Google Docs or HTML.
+  \item To create CVs, project reports and presentations.
+\end{enumerate}
+
+There are three main categories of electronic markup:
+\begin{description}
+  \item[Presentational] Used by traditional word-processing systems.
+  Binary codes embedded within text produce a WYSIWYG result,
+  such as Microsoft Word.
+  \item[Procedural] Markup instructions tell a program how to process
+  the text. TeX is a classic example.
+  \item[Descriptive] Markup labels parts of a document according to
+  their meaning rather than their visual appearance. LaTeX and HTML5
+  provide descriptive/semantic structure.
+\end{description}
+
+\section{Tables and Colors}
+Code for Table~\ref{tab:languages} is in this subsection, but the float
+may be placed on a separate float page. Change the table's placement
+argument to test [t], [b], [h], or [!htbp]. The active [p] option below
+asks LaTeX to place it on a float page.
+
+\begin{table}[p]
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{2.5cm}
+                |>{\raggedright\arraybackslash}p{2cm}
+                |>{\raggedright\arraybackslash}p{2cm}
+                |>{\raggedright\arraybackslash}p{3.5cm}|}
+\hline
+\rowcolor{green}
+Language & Requires compilation & Output & Use\\ \hline
+C/C++ & Yes & Executable & To make apps\\ \hline
+\LaTeX & Yes & PDF & To make documents\\ \hline
+HTML/CSS/JS & No & Webpage & To make websites\\ \hline
+\rowcolor{yellow}
+2.5 cm & 2 cm & 2 cm & 3.5 cm\\ \hline
+\end{tabular}
+\caption{This table should be rendered on a special page.}
+\label{tab:languages}
+\end{table}
+
+RGB represents red, green and blue channel values. The \texttt{RGB} model
+in xcolor accepts integer channel values from 0 to 255.
+The \texttt{rgb} model accepts normalized values from 0 to 1.
+HTML hexadecimal notation uses \texttt{\#RRGGBB}, with two hexadecimal
+digits per color channel. Thus RGB(200,20,200) corresponds to C814C8.
+
+\[
+\textcolor{mypurple}{T(n)}
+=
+\textcolor{myblend}{aT(n/b)+f(n)}
+\]
+
+\section{Figures}
+
+\subsection{Pictures: Rotation and Cropping}
+% Replace filenames with the exact extracted asset files.
+% If images are not available, this will produce a compilation error.
+% See README for image extraction instructions.
+\begin{figure}[htbp]
+  \centering
+  % Set angle to the rotation that matches the intended reference.
+  % angle=0 leaves the circular MNIT logo upright.
+  \includegraphics[width=0.32\textwidth,angle=0]
+    {assets/mnit_logo.png}
+  \caption{MNIT logo}
+  \label{fig:mnit-logo}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  % trim order: left, bottom, right, top.
+  % Adjust the top trim after visually comparing with the reference.
+  \includegraphics[width=\textwidth,trim=0 0 0 65pt,clip]
+    {assets/mnit_building.jpg}
+  \caption{This is a floating image and can appear anywhere.}
+  \label{fig:mnit-building}
+\end{figure}
+
+\subsection{Multiple Images}
+This subsection includes two minipages with equal width.
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[t]{0.48\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{assets/mnit_logo.png}
+  \caption{This is the first minipage}
+  \label{fig:minipage-one}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+  \centering
+  \includegraphics[width=\linewidth,trim=0 0 0 35pt,clip]
+    {assets/mnit_building.jpg}
+  \caption{This is the second minipage}
+  \label{fig:minipage-two}
+\end{minipage}
+\end{figure}
+
+\end{document}

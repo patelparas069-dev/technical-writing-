@@ -1,0 +1,72 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[round,authoryear]{natbib}
+\usepackage{amsmath}
+\usepackage{physics}
+
+\title{Introduction to \LaTeX}
+\author{Shlok Patel}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% Task 1: Hello World
+\section{Hello World}
+Hello World!
+
+% Task 2: first document and table of contents
+\section{My First \LaTeX\ Document}
+This is a paragraph. Multiple spaces in the source are generally
+treated as one space in the output. A blank line starts a new paragraph.
+
+Special characters must be escaped:
+\# \quad \$ \quad \% \quad \& \quad \_ \quad
+\{ \quad \} \quad \textbackslash.
+
+\subsection{A Subsection}
+This is a subsection. Add more sections with \verb|\section|
+and \verb|\subsection|.
+
+\subsection{Numbered List}
+\begin{enumerate}
+    \item First item
+    \item Second item
+    \item Third item
+\end{enumerate}
+
+% The table of contents is placed near the beginning of the document.
+\clearpage
+\tableofcontents
+\clearpage
+
+% Task 2.9
+\section{Science!}
+Einstein's mass-energy equivalence relation is
+\(E=mc^2\).
+
+% Task 3: citations, equation and cross-reference
+\section{Equations, Citations and Cross-References}
+
+Einstein's mass-energy equivalence paper is cited here
+\citep{einstein1905}. The famous relation is \(E=mc^2\).
+
+The time-dependent Schrödinger equation can be written as
+\begin{equation}
+i\hbar\frac{\partial}{\partial t}\Psi(\mathbf{r},t)
+=
+\left[
+-\frac{\hbar^2}{2\mu}\nabla^2+V(\mathbf{r},t)
+\right]\Psi(\mathbf{r},t).
+\label{eq:schrodinger}
+\end{equation}
+
+Equation~\eqref{eq:schrodinger} is the Schrödinger equation.
+The original 1926 eigenvalue-problem paper is cited as
+\citet{schrodinger1926}.
+
+\bibliographystyle{agu}
+\bibliography{physics}
+
+\end{document}
